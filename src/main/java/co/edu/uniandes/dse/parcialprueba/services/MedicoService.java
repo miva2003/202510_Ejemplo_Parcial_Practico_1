@@ -16,13 +16,13 @@ public class MedicoService {
     MedicoRepository medicoRepository;
 
     @Transactional
-    public void createMedicos(MedicoEntity medico){
+    public MedicoEntity createMedicos(MedicoEntity medico){
         log.info("Creando medico");
-        if (medico.getRegistroMedico().substring(0, 1).equals("RM"))
-            medicoRepository.save(medico);
+        if (medico.getRegistroMedico().substring(0, 2).equals("RM"))
+            return medicoRepository.save(medico);
         else
             throw new IllegalArgumentException("El registro medico debe empezar con RM");
-       
+                    
     }
 
 }

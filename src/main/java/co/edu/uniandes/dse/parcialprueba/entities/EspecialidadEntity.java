@@ -16,6 +16,6 @@ public class EspecialidadEntity extends BaseEntity {
     private String descripcion;
 
     @PodamExclude
-    @ManyToMany(mappedBy = "especialidades")
+    @ManyToMany
     private List<MedicoEntity> medicos = new ArrayList<>();
 }

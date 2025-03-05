@@ -14,11 +14,11 @@ public class EspecialidadService {
     @Autowired
     EspecialidadRepository especialidadRepository;
 
-    public void createEspecialidad(EspecialidadEntity especialidad){
+    public EspecialidadEntity createEspecialidad(EspecialidadEntity especialidad){
         log.info("Creando especialidad");
         if (especialidad.getDescripcion().length() < 10){
             throw new IllegalArgumentException("La descripción debe tener al menos 10 caracteres");
         }
-        especialidadRepository.save(especialidad);
+        return especialidadRepository.save(especialidad);
     }
 }
