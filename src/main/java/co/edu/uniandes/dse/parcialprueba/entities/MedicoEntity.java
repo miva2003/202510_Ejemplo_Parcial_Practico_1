@@ -14,7 +14,7 @@ public class MedicoEntity extends BaseEntity{
     
     private String nombre;
     private String apellido;
-    private int registroMedico;
+    private String registroMedico;
 
     @PodamExclude
     @ManyToMany(mappedBy = "medicos")
